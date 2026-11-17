@@ -1,0 +1,84 @@
+<main class="detail-shell">
+  <a class="back-link" routerLink="/">← Retour à la collection</a>
+
+  @if (loading()) {
+    <div class="detail-message" role="status">Chargement de la fiche…</div>
+  } @else if (error()) {
+    <div class="detail-message" role="alert">{{ error() }}</div>
+  } @else if (artwork(); as item) {
+    <p class="eyebrow">{{ item.department || 'Collection du Met' }}</p>
+    <div class="detail-layout">
+      <div class="detail-image">
+        @if (item.primaryImage || item.primaryImageSmall) {
+          <img [src]="item.primaryImage || item.primaryImageSmall" [alt]="item.title" />
+        } @else {
+          <div class="image-placeholder">Image non disponible</div>
+        }
+      </div>
+      <article class="detail-copy">
+        <p class="detail-kicker">Fiche de l’œuvre · {{ item.objectID }}</p>
+        <h1>{{ item.title || 'Œuvre sans titre' }}</h1>
+        <p class="detail-artist">
+          {{ item.artistDisplayName || item.culture || 'Artiste inconnu' }}
+        </p>
+        @if (item.artistDisplayBio) {
+          <p class="artist-bio">{{ item.artistDisplayBio }}</p>
+        }
+
+        <dl class="facts">
+          @if (item.objectDate) {
+            <div>
+              <dt>Date</dt>
+              <dd>{{ item.objectDate }}</dd>
+            </div>
+          }
+          @if (item.medium) {
+            <div>
+              <dt>Matériaux</dt>
+              <dd>{{ item.medium }}</dd>
+            </div>
+          }
+          @if (item.dimensions) {
+            <div>
+              <dt>Dimensions</dt>
+              <dd>{{ item.dimensions }}</dd>
+            </div>
+          }
+          @if (item.culture) {
+            <div>
+              <dt>Culture</dt>
+              <dd>{{ item.culture }}</dd>
+            </div>
+          }
+          @if (item.period) {
+            <div>
+              <dt>Période</dt>
+              <dd>{{ item.period }}</dd>
+            </div>
+          }
+          @if (item.objectName) {
+            <div>
+              <dt>Type d’objet</dt>
+              <dd>{{ item.objectName }}</dd>
+            </div>
+          }
+          @if (item.accessionNumber) {
+            <div>
+              <dt>Numéro d’inventaire</dt>
+              <dd>{{ item.accessionNumber }}</dd>
+            </div>
+          }
+        </dl>
+
+        @if (item.creditLine) {
+          <p class="credit-line">{{ item.creditLine }}</p>
+        }
+        @if (item.objectURL) {
+          <a class="museum-link" [href]="item.objectURL" target="_blank" rel="noopener noreferrer">
+            Voir la notice sur le site du Met <span aria-hidden="true">↗</span>
+          </a>
+        }
+      </article>
+    </div>
+  }
+</main>

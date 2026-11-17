@@ -1,0 +1,167 @@
+:host {
+  display: block;
+}
+
+.detail-shell {
+  width: min(1160px, calc(100% - 64px));
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 44px 0 90px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 48px;
+  color: #6f675d;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #a94830;
+}
+
+.eyebrow {
+  margin-bottom: 17px;
+  color: #9c4a31;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.8fr);
+  align-items: start;
+  gap: clamp(40px, 8vw, 110px);
+}
+
+.detail-image {
+  display: grid;
+  min-height: 360px;
+  max-height: 720px;
+  aspect-ratio: 0.9;
+  place-items: center;
+  background: #e9e3da;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 720px;
+  object-fit: contain;
+}
+
+.image-placeholder {
+  color: #928779;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+}
+
+.detail-copy {
+  padding-top: 13px;
+}
+
+.detail-kicker {
+  margin-bottom: 15px;
+  color: #9c4a31;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.detail-copy h1 {
+  margin-bottom: 14px;
+  color: #29251f;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+}
+
+.detail-artist {
+  margin-bottom: 7px;
+  color: #4a433a;
+  font-size: 1.05rem;
+}
+
+.artist-bio {
+  margin-bottom: 29px;
+  color: #928a7f;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.facts {
+  margin: 28px 0 0;
+  border-top: 1px solid #e2dcd2;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e2dcd2;
+}
+
+.facts dt {
+  color: #898176;
+  font-size: 0.72rem;
+}
+
+.facts dd {
+  margin: 0;
+  color: #403a33;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.credit-line {
+  margin: 21px 0 0;
+  color: #8b8378;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.museum-link {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: 27px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #a94830;
+  color: #a94830;
+  font-size: 0.78rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.detail-message {
+  padding: 36px;
+  border: 1px solid #e2dcd2;
+  color: #71695f;
+}
+
+@media (max-width: 760px) {
+  .detail-shell {
+    width: calc(100% - 36px);
+    padding-top: 29px;
+  }
+
+  .back-link {
+    margin-bottom: 32px;
+  }
+
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .detail-image {
+    min-height: 270px;
+    max-height: 600px;
+  }
+}

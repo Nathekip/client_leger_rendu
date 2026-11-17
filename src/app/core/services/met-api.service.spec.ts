@@ -24,8 +24,7 @@ describe('MetApiService', () => {
 
     const request = http.expectOne(
       (candidate) =>
-        candidate.url ===
-        'https://collectionapi.metmuseum.org/public/collection/v1.1/search',
+        candidate.url === 'https://collectionapi.metmuseum.org/public/collection/v1.1/search',
     );
 
     expect(request.request.params.get('q')).toBe('portrait');

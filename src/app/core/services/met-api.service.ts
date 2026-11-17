@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { Department } from '../models/department';
 import { MetObject, MetSearchResults } from '../models/met-object';
 
@@ -35,5 +35,9 @@ export class MetApiService {
 
   getObject(objectId: number): Observable<MetObject> {
     return this.http.get<MetObject>(`${API_URL}/objects/${objectId}`);
+  }
+
+  getObjects(objectIds: number[]): Observable<MetObject[]> {
+    return forkJoin(objectIds.map((objectId) => this.getObject(objectId)));
   }
 }

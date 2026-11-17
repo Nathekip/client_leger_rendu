@@ -1,0 +1,127 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 0 max(32px, calc((100% - 1240px) / 2));
+  border-bottom: 1px solid #e8e2d9;
+  background: #f9f7f2;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #28241f;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border: 1px solid #a94830;
+  color: #a94830;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+}
+
+.brand-name {
+  display: grid;
+  gap: 2px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.brand-name span {
+  color: #8c8479;
+  font-family: Arial, sans-serif;
+  font-size: 0.53rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 39px);
+}
+
+.site-nav a,
+.site-footer a {
+  color: #615a51;
+  font-size: 0.73rem;
+  text-decoration: none;
+  transition: color 140ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active,
+.site-footer a:hover {
+  color: #a94830;
+}
+
+.site-nav .museum-nav-link span {
+  margin-left: 4px;
+  color: #a94830;
+}
+
+.site-footer {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 18px max(32px, calc((100% - 1240px) / 2));
+  border-top: 1px solid #e8e2d9;
+  color: #8b8378;
+  font-size: 0.69rem;
+}
+
+.site-footer .footer-brand {
+  color: #302a24;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    min-height: 68px;
+    padding-inline: 18px;
+  }
+
+  .brand-name {
+    font-size: 1.02rem;
+  }
+
+  .brand-name span {
+    font-size: 0.45rem;
+  }
+
+  .site-nav {
+    gap: 14px;
+  }
+
+  .site-nav a {
+    font-size: 0.66rem;
+  }
+
+  .site-nav a:nth-child(2) {
+    display: none;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+    padding: 22px 18px;
+  }
+}
